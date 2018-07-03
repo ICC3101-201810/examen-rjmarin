@@ -59,7 +59,7 @@ namespace Pacman
             int pacmanY = picture_pacman.Location.Y;
            
 
-            aTimer = new System.Timers.Timer(5000);
+            aTimer = new System.Timers.Timer(3000);
             aTimer.Elapsed += OnTimedEvent;
             aTimer.AutoReset = true;
             aTimer.Enabled = true;
@@ -106,11 +106,13 @@ namespace Pacman
                     }
                     if (((PictureBox)item).Bounds.IntersectsWith(pictureghost_pink.Bounds))
                     {
+                        pictureghost_pink.Location = new Point(Location.X, Location.Y);
+                        
 
                     }
                     if (((PictureBox)item).Bounds.IntersectsWith(pictureghost_pink.Bounds))
                     {
-
+                        pictureghost_red.Location = new Point(Location.X, Location.Y);
                     }
                     if (item is PictureBox && item.Tag == "ghost")
                     {
@@ -156,7 +158,8 @@ namespace Pacman
 
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
-            /*
+            //me aparece un error por no saber manejar bien thread  no pude arreglarlo
+            //parte el movimento del os fantasmas despues de 2 segundos
             int pacmanX = picture_pacman.Location.X;
             int pacmanY = picture_pacman.Location.Y;
             int redX = picture_pacman.Location.X;
@@ -218,10 +221,12 @@ namespace Pacman
 
                 }
             }
+            /*
             pictureghost_pink.Location = new Point(pinkX, pinkY);
             pictureghost_red.Location = new Point(redX, redY);
             */
-
+            
+            
 
 
 
@@ -230,6 +235,9 @@ namespace Pacman
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            //me funcionaba antes de poner el panel despues de inicio de juego pero despues me paro de funcionar
+            //trate de hacer de todo pero como me quedaba poco tiempo no lo pude corregir
+
             if (e.KeyCode == Keys.Up)
             {
                 goup = true;
@@ -280,10 +288,18 @@ namespace Pacman
                 panel1.Visible = false;
                 timer1.Enabled = true;
                 labelScore.Text += score;
+                labelNAm.Text += textBoxNombre.Text;
+                
                 
                 
                 
             }
+        }
+
+        private void Btn_scores_Click(object sender, EventArgs e)
+        {
+            Scores s = new Scores();
+            s.Show();
         }
     }
 }

@@ -41,14 +41,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonjugar = new System.Windows.Forms.Button();
+            this.Btn_scores = new System.Windows.Forms.Button();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.labelN = new System.Windows.Forms.Label();
             this.labelB = new System.Windows.Forms.Label();
             this.labelpacman = new System.Windows.Forms.Label();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.Btn_scores = new System.Windows.Forms.Button();
-            this.buttonjugar = new System.Windows.Forms.Button();
             this.labelScore = new System.Windows.Forms.Label();
             this.labelGame = new System.Windows.Forms.Label();
+            this.labelNAm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturegrape)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureghost_red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturecherry)).BeginInit();
@@ -173,6 +174,33 @@
             this.panel1.Size = new System.Drawing.Size(580, 379);
             this.panel1.TabIndex = 10;
             // 
+            // buttonjugar
+            // 
+            this.buttonjugar.Location = new System.Drawing.Point(153, 255);
+            this.buttonjugar.Name = "buttonjugar";
+            this.buttonjugar.Size = new System.Drawing.Size(75, 23);
+            this.buttonjugar.TabIndex = 13;
+            this.buttonjugar.Text = "Play";
+            this.buttonjugar.UseVisualStyleBackColor = true;
+            this.buttonjugar.Click += new System.EventHandler(this.buttonjugar_Click);
+            // 
+            // Btn_scores
+            // 
+            this.Btn_scores.Location = new System.Drawing.Point(260, 255);
+            this.Btn_scores.Name = "Btn_scores";
+            this.Btn_scores.Size = new System.Drawing.Size(75, 23);
+            this.Btn_scores.TabIndex = 12;
+            this.Btn_scores.Text = "Scores";
+            this.Btn_scores.UseVisualStyleBackColor = true;
+            this.Btn_scores.Click += new System.EventHandler(this.Btn_scores_Click);
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(203, 192);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(141, 20);
+            this.textBoxNombre.TabIndex = 11;
+            // 
             // labelN
             // 
             this.labelN.AutoSize = true;
@@ -202,32 +230,6 @@
             this.labelpacman.TabIndex = 0;
             this.labelpacman.Text = "Pacman";
             // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(203, 192);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(141, 20);
-            this.textBoxNombre.TabIndex = 11;
-            // 
-            // Btn_scores
-            // 
-            this.Btn_scores.Location = new System.Drawing.Point(260, 255);
-            this.Btn_scores.Name = "Btn_scores";
-            this.Btn_scores.Size = new System.Drawing.Size(75, 23);
-            this.Btn_scores.TabIndex = 12;
-            this.Btn_scores.Text = "Scores";
-            this.Btn_scores.UseVisualStyleBackColor = true;
-            // 
-            // buttonjugar
-            // 
-            this.buttonjugar.Location = new System.Drawing.Point(153, 255);
-            this.buttonjugar.Name = "buttonjugar";
-            this.buttonjugar.Size = new System.Drawing.Size(75, 23);
-            this.buttonjugar.TabIndex = 13;
-            this.buttonjugar.Text = "Play";
-            this.buttonjugar.UseVisualStyleBackColor = true;
-            this.buttonjugar.Click += new System.EventHandler(this.buttonjugar_Click);
-            // 
             // labelScore
             // 
             this.labelScore.AutoSize = true;
@@ -246,11 +248,21 @@
             this.labelGame.Size = new System.Drawing.Size(0, 60);
             this.labelGame.TabIndex = 15;
             // 
+            // labelNAm
+            // 
+            this.labelNAm.AutoSize = true;
+            this.labelNAm.Location = new System.Drawing.Point(527, 7);
+            this.labelNAm.Name = "labelNAm";
+            this.labelNAm.Size = new System.Drawing.Size(41, 13);
+            this.labelNAm.TabIndex = 16;
+            this.labelNAm.Text = "Name: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 414);
+            this.Controls.Add(this.labelNAm);
             this.Controls.Add(this.labelGame);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.panel1);
@@ -303,6 +315,7 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label labelScore;
         private System.Windows.Forms.Label labelGame;
+        private System.Windows.Forms.Label labelNAm;
     }
 }
 
